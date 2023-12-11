@@ -1,5 +1,8 @@
 package task_manager_app.model;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 public class Task {
     enum Status {
         PENDING,
@@ -7,15 +10,15 @@ public class Task {
         COMPLETED
     }
     private int taskId;
-    private int userId;
     private String title;
     private String description;
     private String creationDate;
-    private String dueDate;
+    private LocalDate dueDate;
     private int priority;
     private Status status;
 
     public Task() {
+        this.status = Status.PENDING;
     }
 
     public Task(String title, String description, int priority) {
@@ -25,12 +28,11 @@ public class Task {
         this.status = Status.PENDING;
     }
 
-    public Task(int userId, String title, String description, String creationDate, String dueDate, int priority, String status) {
-        this.userId = userId;
+    public Task(String title, String description, String creationDate, String dueDate, int priority, String status) {
         this.title = title;
         this.description = description;
         this.creationDate = creationDate;
-        this.dueDate = dueDate;
+        this.dueDate = LocalDate.parse(dueDate);
         this.priority = priority;
         this.status = Status.valueOf(status);
     }
@@ -41,14 +43,6 @@ public class Task {
 
     public void setTaskId(int taskId) {
         this.taskId = taskId;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     public String getTitle() {
@@ -75,11 +69,11 @@ public class Task {
         this.creationDate = creationDate;
     }
 
-    public String getDueDate() {
+    public LocalDate getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(String dueDate) {
+    public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
     }
 
@@ -95,7 +89,35 @@ public class Task {
         return status;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setStatus(String status) {
+        this.status = mapStatus(status);
+    }
+
+    @Override
+    public String toString() {
+        return  taskId + ") " +
+                "Title: '" + title + '\'' +
+                ", Description: '" + description + '\'' +
+                ", CreationDate: '" + creationDate + '\'' +
+                ", Due on: '" + dueDate + '\'' +
+                ", Priority: " + priority +
+                ", Status: " + status;
+    }
+
+    public static Status mapStatus(String statusString) {
+        switch (statusString.toUpperCase()) {
+            case "PENDING":
+                return Status.PENDING;
+            case "IN_PROGRESS":
+                return Status.IN_PROGRESS;
+            case "COMPLETED":
+                return Status.COMPLETED;
+            default:
+                throw new IllegalArgumentException("Ungültiger Status-String: " + statusString);
+        }
+    }
+
+    public String getStatusAsString() {
+        return this.status.toString();
     }
 }

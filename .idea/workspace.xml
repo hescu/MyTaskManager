@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c155e3a5-7679-44bd-9c17-2819597b0daa" name="Changes" comment="i have no idea">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task_manager_app/data/DataSourceServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task_manager_app/model/SubTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task_manager_app/model/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c155e3a5-7679-44bd-9c17-2819597b0daa" name="Changes" comment="added main menu">
+      <change afterPath="$PROJECT_DIR$/src/task_manager_app/data/TaskCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/task_manager_app/services/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_11_2023_12_20_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_11_2023_12_20__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyTaskManager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyTaskManager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task_manager_app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task_manager_app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task_manager_app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task_manager_app/controllers/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task_manager_app/controllers/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task_manager_app/model/SubTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task_manager_app/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task_manager_app/model/Task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +125,31 @@
       <option name="project" value="LOCAL" />
       <updated>1701084484127</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added models user, task, subtask">
+      <option name="closed" value="true" />
+      <created>1701339128847</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701339128847</updated>
+    </task>
+    <task id="LOCAL-00004" summary="removed unused imports">
+      <option name="closed" value="true" />
+      <created>1701339162854</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701339162854</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added main menu">
+      <option name="closed" value="true" />
+      <created>1701347721499</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701347721499</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +178,19 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="i have no idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="i have no idea" />
+    <MESSAGE value="added models user, task, subtask" />
+    <MESSAGE value="removed unused imports" />
+    <MESSAGE value="added main menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="added main menu" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.InputMismatchException" package="java.util" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

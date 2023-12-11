@@ -8,8 +8,8 @@ public class DataSourceServer {
         dataSource.setServerName("localhost");
         dataSource.setPort(3306);
         dataSource.setDatabaseName("taskmanager");
-        dataSource.setUser("neonscherge");
-        dataSource.setPassword("BfYZBALJFfsSLgq2YHM5");
+        dataSource.setUser("");
+        dataSource.setPassword("");
 
         return dataSource;
     }
