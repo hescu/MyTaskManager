@@ -1,10 +1,13 @@
 package task_manager_app.controllers;
 
+import task_manager_app.model.Task;
 import task_manager_app.services.TaskService;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
+
     public static int mainMenu(Scanner input) {
         int selection;
         final int MAX_OPTION = 4;
@@ -17,15 +20,15 @@ public class Menu {
         System.out.println("4) Exit");
 
         do {
-            selection = getUserInput(input, MAX_OPTION);
+            selection = getUserInput(MAX_OPTION);
         } while (checkMenuSelection(selection, MAX_OPTION));
 
         switch (selection) {
             case 1:
-                viewTasksSubMenu(input);
+                viewTasksSubMenu();
                 break;
             case 2:
-                addUpdateTaskSubMenu(input);
+                addUpdateTaskSubMenu();
                 break;
             case 3:
                 showReportsSubMenu();
@@ -34,7 +37,8 @@ public class Menu {
         return selection;
     }
 
-    private static void viewTasksSubMenu(Scanner input) {
+    private static void viewTasksSubMenu() {
+        Scanner input = new Scanner(System.in);
         System.out.println("Your current tasks: ");
         TaskService.showCurrentTasks();
         System.out.println();
@@ -42,7 +46,7 @@ public class Menu {
         input.nextLine();
     }
 
-    private static void addUpdateTaskSubMenu(Scanner input) {
+    private static void addUpdateTaskSubMenu() {
         int sel;
         final int MAX_OPTION = 4;
 
@@ -54,28 +58,35 @@ public class Menu {
         System.out.println("4) Exit");
 
         do {
-            sel = getUserInput(input, MAX_OPTION);
+            sel = getUserInput(MAX_OPTION);
         } while (checkMenuSelection(sel, MAX_OPTION));
 
         switch (sel) {
             case 1:
-                TaskService.addTask(input);
+                TaskService.addTask();
                 break;
             case 2:
-                TaskService.updateTask(input);
+                TaskService.updateTask();
                 break;
             case 3:
-                TaskService.deleteTask(input);
+                TaskService.deleteTask();
                 break;
         }
     }
 
     private static void showReportsSubMenu() {
-        // Implement logic for the "Show reports" submenu
         System.out.println("Showing reports...");
+        System.out.println("Completed tasks: ");
+        List<Task> completedTasks = TaskService.getCompletedTasks();
+
+        for (Task task : completedTasks) {
+            System.out.println(task.toString());
+        }
     }
 
-    private static int getUserInput(Scanner input, int maxOption) {
+    public static int getUserInput(int maxOption) {
+        Scanner input = new Scanner(System.in);
+
         String userInput = input.nextLine();
 
         if (userInput.isEmpty()) {
